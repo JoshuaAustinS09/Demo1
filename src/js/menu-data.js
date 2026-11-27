@@ -61,7 +61,7 @@ export const MENU_ITEMS = [
     description:
       "Al dente fettuccine folded into a rich sauteed mushroom cream sauce with parmesan and thyme.",
     price: 45000,
-    image: "./assets/images/Gemini_Generated_Image_moir4smoir4smoir.jfif",
+    image: "./assets/images/creamy-mushroom-pasta.jfif",
     available: true,
     featured: true,
     label: "Bestseller",
