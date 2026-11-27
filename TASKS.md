@@ -132,9 +132,14 @@ Pusat pengelolaan pekerjaan untuk proyek **Maison Kitchen** (Demo Portfolio Site
   - Seluruh checklist pada `PROJECT_BRIEF.md` Section 15 terpenuhi dan dibuktikan.
 
 ### `TASK-014` — Final Review & Deployment ke GitHub Pages
-- **Status:** `TODO`
+- **Status:** `DONE`
 - **Tujuan:** Mempublikasikan website demo ke GitHub Pages setelah mendapatkan persetujuan pengguna.
 - **Deskripsi:** Verifikasi final path aset, commit ke branch yang sesuai, dan deployment GitHub Pages (Project Site).
 - **Acceptance Criteria:**
   - Mendapat persetujuan eksplisit pengguna sebelum deployment.
   - URL production berhasil diakses dan diverifikasi tanpa error.
+- **Hasil:**
+  - Repository: `https://github.com/JoshuaAustinS09/Demo1`
+  - GitHub Pages aktif: `https://joshuaaustins09.github.io/Demo1/`
+  - Dikonfirmasi pengguna: ✅ aktif dan dapat diakses
+  - Selesai: 2026-11-27
