@@ -66,6 +66,9 @@ Dokumen ini mencatat keputusan arsitektur dan teknis penting pada proyek **Maiso
 ---
 
 ### `DEC-007` — Nama Repository & Username GitHub untuk Konfigurasi Final
-- **Status:** `OPEN — NEEDS USER INPUT`
-- **Konteks:** Dibutuhkan sebelum deployment final dan penentuan canonical URL SEO.
-- **Tindakan Selanjutnya:** Konfirmasi `USERNAME` dan `REPOSITORY-NAME` GitHub pada tahap persiapan deployment.
+- **Status:** `APPROVED`
+- **Keputusan:**
+  - **Username GitHub:** `JoshuaAustinS09`
+  - **Nama Repository:** `Demo1`
+  - **URL Repository:** `https://github.com/JoshuaAustinS09/Demo1`
+  - **URL GitHub Pages (Project Site):** `https://joshuaaustins09.github.io/Demo1/`

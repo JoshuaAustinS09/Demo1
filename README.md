@@ -82,9 +82,11 @@ Demo1/
 
 ## Deployment
 
-Website dirancang untuk di-deploy sebagai **GitHub Pages (Project Site)** dengan format URL rencana:
+Website di-deploy sebagai **GitHub Pages (Project Site)** pada:
 
-`https://USERNAME.github.io/REPOSITORY-NAME/`
+`https://joshuaaustins09.github.io/Demo1/`
+
+Repository: `https://github.com/JoshuaAustinS09/Demo1`
 
 > [!IMPORTANT]
 > Sebelum deployment final:
