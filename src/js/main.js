@@ -112,7 +112,7 @@ function initHeroActions() {
       SITE_CONFIG.contact.whatsappNumber
     ) {
       const text = encodeURIComponent(
-        `Hello ${SITE_CONFIG.brand.name}! I would like to ask about your menu and place an order.`
+        `Halo ${SITE_CONFIG.brand.name}! Saya ingin bertanya mengenai menu dan melakukan pemesanan.`
       );
       window.open(
         `https://wa.me/${SITE_CONFIG.contact.whatsappNumber}?text=${text}`,
@@ -298,7 +298,13 @@ function renderBusinessInfo() {
   const hoursList = document.getElementById("opening-hours-list");
 
   if (locationAddress) locationAddress.textContent = location.address;
-  if (locationWhatsapp) locationWhatsapp.textContent = contact.whatsappDisplay;
+  if (locationWhatsapp) {
+    if (!contact.isWhatsappPlaceholder && contact.whatsappNumber) {
+      locationWhatsapp.innerHTML = `<a href="https://wa.me/${contact.whatsappNumber}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-espresso hover:text-terracotta transition-colors"><i data-lucide="message-circle" class="h-4 w-4 text-sage"></i><span>${contact.whatsappDisplay}</span></a>`;
+    } else {
+      locationWhatsapp.textContent = contact.whatsappDisplay;
+    }
+  }
 
   if (mapsWrapper) {
     if (!location.isLocationPlaceholder && location.googleMapsUrl) {

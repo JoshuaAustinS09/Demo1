@@ -18,9 +18,9 @@ export const SITE_CONFIG = {
 
   contact: {
     // Format internasional tanpa '+', spasi, atau tanda baca (contoh: 6281234567890)
-    whatsappNumber: "",
-    whatsappDisplay: "+62 800-0000-0000 (Demo Placeholder)",
-    isWhatsappPlaceholder: true,
+    whatsappNumber: "6281225005978",
+    whatsappDisplay: "+62 812-2500-5978",
+    isWhatsappPlaceholder: false,
 
     instagramHandle: "@maisonkitchen.demo",
     instagramUrl: "",

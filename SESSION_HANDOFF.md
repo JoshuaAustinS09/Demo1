@@ -5,14 +5,14 @@
 * **Tanggal / Waktu Handoff**: `2026-11-27 18:15 WIB`
 * **Agent / Model**: `Antigravity — Gemini`
 * **Git Branch**: `main`
-* **Commit Hash Terakhir**: `dd0194b` (docs: record GitHub repository and Pages URL)
-* **Status Working Tree**: `Dirty` — TASKS.md diperbarui (TASK-014 → DONE) dan SESSION_HANDOFF.md baru dibuat, belum di-commit
+* **Commit Hash Terakhir**: `2630d37`
+* **Status Working Tree**: `Clean (setelah commit konfigurasi WhatsApp nyata)`
 
 ---
 
 ## 2. Ringkasan Proyek & Tujuan Sesi
-* **Ringkasan Proyek**: Website demo single-page "Maison Kitchen" untuk portfolio Siteworthy — menampilkan brand fiktif restoran/cafe yang dapat di-customisasi untuk klien UMKM kuliner di Semarang.
-* **Tujuan Sesi Ini**: Membangun seluruh website dari nol (TASK-001 s/d TASK-014) dan men-deploy-nya ke GitHub Pages.
+* **Ringkasan Proyek**: Website demo single-page "Maison Kitchen" untuk portfolio Siteworthy — menampilkan brand restoran/cafe yang dapat di-customisasi untuk klien UMKM kuliner di Semarang.
+* **Tujuan Sesi Ini**: Membangun seluruh website dari nol (TASK-001 s/d TASK-014), deploy ke GitHub Pages, dan mengonfigurasi nomor WhatsApp nyata (`+62 812-2500-5978`) untuk seluruh integrasi pemesanan.
 
 ---
 
