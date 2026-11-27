@@ -1,0 +1,14 @@
+{
+  "name": "maison-kitchen-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Maison Kitchen — Restaurant & Cafe Website Demo (Siteworthy Portfolio)",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/styles.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

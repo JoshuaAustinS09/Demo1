@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maison Kitchen — A Taste Worth Remembering</title>
+  <meta
+    name="description"
+    content="Discover thoughtfully prepared meals, comforting drinks, and memorable moments at Maison Kitchen. Explore our menu and order easily via WhatsApp."
+  />
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Maison Kitchen — A Taste Worth Remembering" />
+  <meta
+    property="og:description"
+    content="Good food, thoughtful ingredients, and memorable moments. Explore our curated menu and order via WhatsApp."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/images/hero-dining.jfif" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+
+  <!-- Google Fonts: Playfair Display & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+<body class="bg-cream text-espresso font-sans antialiased selection:bg-terracotta/20 selection:text-espresso">
+  <!-- Skip Link for Keyboard Accessibility -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-espresso focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-cream"
+  >
+    Skip to main content
+  </a>
+
+  <!-- SECTION 01: NAVBAR -->
+  <header
+    id="navbar"
+    class="sticky top-0 z-40 border-b border-espresso/10 bg-cream/95 backdrop-blur-sm"
+  >
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+      <!-- Wordmark -->
+      <a
+        href="#home"
+        class="font-serif text-xl font-semibold tracking-tight text-espresso transition-colors hover:text-terracotta sm:text-2xl"
+      >
+        Maison Kitchen
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Primary Navigation" class="hidden md:flex md:items-center md:gap-7">
+        <a
+          href="#home"
+          data-nav-link
+          class="nav-link text-sm font-medium text-espresso/80 transition-colors hover:text-terracotta"
+        >
+          Home
+        </a>
+        <a
+          href="#menu"
+          data-nav-link
+          class="nav-link text-sm font-medium text-espresso/80 transition-colors hover:text-terracotta"
+        >
+          Our Menu
+        </a>
+        <a
+          href="#about"
+          data-nav-link
+          class="nav-link text-sm font-medium text-espresso/80 transition-colors hover:text-terracotta"
+        >
+          About Us
+        </a>
+        <a
+          href="#promotion"
+          data-nav-link
+          class="nav-link text-sm font-medium text-espresso/80 transition-colors hover:text-terracotta"
+        >
+          Promotion
+        </a>
+        <a
+          href="#location"
+          data-nav-link
+          class="nav-link text-sm font-medium text-espresso/80 transition-colors hover:text-terracotta"
+        >
+          Location
+        </a>
+      </nav>
+
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex md:items-center md:gap-3">
+        <button
+          type="button"
+          id="cart-open-btn"
+          aria-label="Open shopping cart"
+          class="relative inline-flex items-center gap-2 rounded-md border border-espresso/15 bg-white px-3.5 py-2 text-sm font-medium text-espresso transition-colors hover:border-espresso/30 hover:bg-cream"
+        >
+          <i data-lucide="shopping-bag" class="h-4 w-4"></i>
+          <span>Cart</span>
+          <span
+            id="cart-count-badge"
+            class="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-terracotta px-1.5 text-xs font-semibold text-white"
+          >
+            0
+          </span>
+        </button>
+        <a
+          href="#menu"
+          class="inline-flex items-center rounded-md bg-terracotta px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-terracotta/90"
+        >
+          Order Now
+        </a>
+      </div>
+
+      <!-- Mobile Actions -->
+      <div class="flex items-center gap-2 md:hidden">
+        <button
+          type="button"
+          id="mobile-cart-open-btn"
+          aria-label="Open shopping cart"
+          class="relative inline-flex items-center justify-center rounded-md border border-espresso/15 bg-white p-2 text-espresso transition-colors hover:bg-cream"
+        >
+          <i data-lucide="shopping-bag" class="h-5 w-5"></i>
+          <span
+            id="mobile-cart-count-badge"
+            class="absolute -top-1.5 -right-1.5 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-terracotta px-1 text-[11px] font-semibold text-white"
+          >
+            0
+          </span>
+        </button>
+        <button
+          type="button"
+          id="mobile-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="inline-flex items-center justify-center rounded-md border border-espresso/15 bg-white p-2 text-espresso transition-colors hover:bg-cream"
+        >
+          <i data-lucide="menu" id="mobile-menu-icon-open" class="h-5 w-5"></i>
+          <i data-lucide="x" id="mobile-menu-icon-close" class="hidden h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Panel -->
+    <div
+      id="mobile-menu"
+      class="hidden border-t border-espresso/10 bg-cream px-4 py-4 md:hidden"
+    >
+      <nav aria-label="Mobile Navigation" class="flex flex-col gap-1">
+        <a
+          href="#home"
+          data-mobile-nav-link
+          class="rounded-md px-3 py-2.5 text-base font-medium text-espresso/90 transition-colors hover:bg-white hover:text-terracotta"
+        >
+          Home
+        </a>
+        <a
+          href="#menu"
+          data-mobile-nav-link
+          class="rounded-md px-3 py-2.5 text-base font-medium text-espresso/90 transition-colors hover:bg-white hover:text-terracotta"
+        >
+          Our Menu
+        </a>
+        <a
+          href="#about"
+          data-mobile-nav-link
+          class="rounded-md px-3 py-2.5 text-base font-medium text-espresso/90 transition-colors hover:bg-white hover:text-terracotta"
+        >
+          About Us
+        </a>
+        <a
+          href="#promotion"
+          data-mobile-nav-link
+          class="rounded-md px-3 py-2.5 text-base font-medium text-espresso/90 transition-colors hover:bg-white hover:text-terracotta"
+        >
+          Promotion
+        </a>
+        <a
+          href="#location"
+          data-mobile-nav-link
+          class="rounded-md px-3 py-2.5 text-base font-medium text-espresso/90 transition-colors hover:bg-white hover:text-terracotta"
+        >
+          Location
+        </a>
+        <a
+          href="#menu"
+          data-mobile-nav-link
+          class="mt-2 inline-flex items-center justify-center rounded-md bg-terracotta px-4 py-2.5 text-base font-medium text-white transition-colors hover:bg-terracotta/90"
+        >
+          Order Now
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- SECTION 02: HERO -->
+    <section id="home" class="py-10 sm:py-16 lg:py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+        <!-- Editorial Copy -->
+        <div class="lg:col-span-6">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-sage">
+            Restaurant &amp; Cafe
+          </p>
+          <h1 class="mt-3 font-serif text-4xl leading-[1.12] font-semibold tracking-tight text-espresso sm:text-5xl lg:text-[3.5rem]">
+            A Taste Worth Remembering.
+          </h1>
+          <p class="mt-5 max-w-lg text-base leading-relaxed text-espresso/80 sm:text-lg">
+            Discover thoughtfully prepared meals, comforting drinks, and memorable moments at Maison Kitchen.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <a
+              href="#menu"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-terracotta px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-terracotta/90 sm:text-base"
+            >
+              <span>Explore Our Menu</span>
+              <i data-lucide="arrow-down" class="h-4 w-4"></i>
+            </a>
+            <button
+              type="button"
+              id="hero-whatsapp-btn"
+              class="inline-flex items-center justify-center gap-2 rounded-md border border-espresso/20 bg-white px-6 py-3 text-sm font-medium text-espresso transition-colors hover:border-espresso/40 hover:bg-cream sm:text-base"
+            >
+              <i data-lucide="message-circle" class="h-4 w-4 text-sage"></i>
+              <span>Order via WhatsApp</span>
+            </button>
+          </div>
+          <p class="mt-6 text-xs text-espresso/60">
+            Good food, thoughtful ingredients, and memorable moments.
+          </p>
+        </div>
+
+        <!-- Editorial Visual -->
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-lg border border-espresso/10 bg-white p-2 shadow-sm">
+            <img
+              src="./assets/images/hero-dining.jfif"
+              alt="Warm dining table at Maison Kitchen featuring freshly plated dishes and artisan coffee"
+              class="aspect-[4/3] w-full rounded object-cover"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: FEATURED MENU -->
+    <section id="featured-menu" aria-labelledby="featured-menu-heading" class="py-14 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase text-sage">
+              Chef's Selection
+            </p>
+            <h2 id="featured-menu-heading" class="mt-2 font-serif text-3xl font-semibold text-espresso sm:text-4xl">
+              Featured Menu
+            </h2>
+          </div>
+          <p class="max-w-md text-sm text-espresso/75">
+            Guest favorites crafted fresh to order. Sample dishes and prices shown for demonstration.
+          </p>
+        </div>
+
+        <div
+          id="featured-menu-grid"
+          class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: FULL MENU -->
+    <section id="menu" aria-labelledby="full-menu-heading" class="bg-white py-14 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-sage">
+            Explore Every Dish
+          </p>
+          <h2 id="full-menu-heading" class="mt-2 font-serif text-3xl font-semibold text-espresso sm:text-4xl">
+            Our Menu
+          </h2>
+          <p class="mx-auto mt-3 max-w-xl text-sm text-espresso/75 sm:text-base">
+            Browse by category and add your selections to the order bag for quick WhatsApp checkout.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div
+          id="menu-filter-tabs"
+          role="tablist"
+          aria-label="Menu categories"
+          class="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3"
+        ></div>
+
+        <!-- Full Menu Grid -->
+        <div
+          id="full-menu-grid"
+          class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        ></div>
+
+        <!-- Empty State -->
+        <div
+          id="menu-empty-state"
+          class="mt-10 hidden rounded-lg border border-espresso/10 bg-cream/60 px-6 py-12 text-center"
+        >
+          <p class="font-serif text-xl font-medium text-espresso">No dishes found in this category.</p>
+          <p class="mt-2 text-sm text-espresso/70">
+            Please select another category to explore our available menu items.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: ABOUT US -->
+    <section id="about" aria-labelledby="about-heading" class="py-14 sm:py-20">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-14 lg:px-8">
+        <div class="lg:col-span-6">
+          <div class="overflow-hidden rounded-lg border border-espresso/10 bg-white p-2 shadow-sm">
+            <img
+              src="./assets/images/about-kitchen.jfif"
+              alt="Warm cafe interior and kitchen preparation at Maison Kitchen"
+              loading="lazy"
+              class="aspect-[4/3] w-full rounded object-cover"
+            />
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <p class="text-xs font-semibold tracking-[0.2em] uppercase text-sage">
+            Our Story
+          </p>
+          <h2 id="about-heading" class="mt-2 font-serif text-3xl font-semibold text-espresso sm:text-4xl">
+            More Than Just a Meal.
+          </h2>
+          <div class="mt-5 space-y-4 text-base leading-relaxed text-espresso/80">
+            <p>
+              Maison Kitchen is built around a simple idea: unhurried hospitality, comforting flavors,
+              and a welcoming table where every guest feels at home.
+            </p>
+            <p>
+              From savory plates prepared in small batches to thoughtfully brewed coffee and warm desserts,
+              every detail is designed to turn an everyday lunch or coffee break into a memorable moment.
+            </p>
+          </div>
+          <p class="mt-6 border-l-2 border-terracotta pl-4 text-xs text-espresso/65">
+            Fictional brand narrative created for the Siteworthy culinary portfolio demonstration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: SPECIAL PROMOTION -->
+    <section id="promotion" aria-labelledby="promotion-heading" class="bg-white py-14 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-8 overflow-hidden rounded-lg border border-espresso/10 bg-cream/60 p-6 sm:p-8 lg:grid-cols-12 lg:gap-10 lg:p-10">
+          <div class="lg:col-span-7">
+            <span
+              id="promo-badge"
+              class="inline-flex items-center rounded-full bg-sage/15 px-3 py-1 text-xs font-semibold tracking-wide text-sage"
+            >
+              Demo Promotion
+            </span>
+            <h2 id="promotion-heading" class="mt-3 font-serif text-3xl font-semibold text-espresso sm:text-4xl">
+              Weekday Lunch Pairing
+            </h2>
+            <p id="promo-description" class="mt-4 max-w-xl text-base leading-relaxed text-espresso/80">
+              Enjoy any Main Course paired with an Iced Caramel Latte or Fresh Yuzu Sparkler at a curated bundle price during weekday lunch hours.
+            </p>
+            <p id="promo-note" class="mt-3 text-xs text-espresso/60">
+              Illustrative promotional content for demonstration purposes.
+            </p>
+            <div class="mt-6">
+              <a
+                href="#menu"
+                class="inline-flex items-center gap-2 rounded-md bg-terracotta px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-terracotta/90"
+              >
+                <span>Order Now</span>
+                <i data-lucide="arrow-right" class="h-4 w-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="overflow-hidden rounded-lg border border-espresso/10 bg-white p-1.5 shadow-sm">
+              <img
+                id="promo-image"
+                src="./assets/images/lunch-promo.jfif"
+                alt="Maison Kitchen weekday lunch pairing with pasta and iced coffee"
+                loading="lazy"
+                class="aspect-[4/3] w-full rounded object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: LOCATION & OPENING HOURS -->
+    <section id="location" aria-labelledby="location-heading" class="py-14 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-12 lg:gap-12">
+          <div class="lg:col-span-5">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase text-sage">
+              Location &amp; Hours
+            </p>
+            <h2 id="location-heading" class="mt-2 font-serif text-3xl font-semibold text-espresso sm:text-4xl">
+              Visit Us
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-espresso/80">
+              Stop by for a relaxed meal, morning coffee, or order ahead through WhatsApp.
+            </p>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:col-span-7">
+            <!-- Address & Contact Card -->
+            <div class="rounded-lg border border-espresso/10 bg-white p-6">
+              <div class="flex items-center gap-2.5 text-espresso">
+                <i data-lucide="map-pin" class="h-5 w-5 text-terracotta"></i>
+                <h3 class="font-serif text-xl font-semibold">Address &amp; Contact</h3>
+              </div>
+              <p id="location-address" class="mt-3 text-sm leading-relaxed text-espresso/80"></p>
+              <div class="mt-4 border-t border-espresso/10 pt-4 text-sm text-espresso/80">
+                <p class="font-medium text-espresso">WhatsApp</p>
+                <p id="location-whatsapp" class="mt-1 text-espresso/75"></p>
+              </div>
+              <div id="location-maps-wrapper" class="mt-5"></div>
+            </div>
+
+            <!-- Opening Hours Card -->
+            <div class="rounded-lg border border-espresso/10 bg-white p-6">
+              <div class="flex items-center gap-2.5 text-espresso">
+                <i data-lucide="clock" class="h-5 w-5 text-terracotta"></i>
+                <h3 class="font-serif text-xl font-semibold">Opening Hours</h3>
+              </div>
+              <dl id="opening-hours-list" class="mt-4 space-y-3 text-sm"></dl>
+              <p class="mt-5 text-xs text-espresso/60">
+                Demo schedule placeholder — easily configurable in <code class="font-mono">config.js</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 08: FOOTER -->
+  <footer id="footer" class="bg-espresso text-cream py-12 sm:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <p id="footer-brand-name" class="font-serif text-2xl font-semibold text-cream">Maison Kitchen</p>
+          <p id="footer-brand-desc" class="mt-3 text-sm leading-relaxed text-cream/75"></p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-cream/60">
+            Navigation
+          </h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#home" class="text-cream/85 transition-colors hover:text-terracotta">Home</a></li>
+            <li><a href="#menu" class="text-cream/85 transition-colors hover:text-terracotta">Our Menu</a></li>
+            <li><a href="#about" class="text-cream/85 transition-colors hover:text-terracotta">About Us</a></li>
+            <li><a href="#promotion" class="text-cream/85 transition-colors hover:text-terracotta">Promotion</a></li>
+            <li><a href="#location" class="text-cream/85 transition-colors hover:text-terracotta">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-cream/60">
+            Connect
+          </h3>
+          <ul id="footer-contact-list" class="mt-3 space-y-2 text-sm text-cream/85"></ul>
+        </div>
+
+        <!-- Address & Hours -->
+        <div>
+          <h3 class="font-sans text-xs font-semibold tracking-[0.15em] uppercase text-cream/60">
+            Location &amp; Hours
+          </h3>
+          <p id="footer-address" class="mt-3 text-sm leading-relaxed text-cream/80"></p>
+          <div id="footer-hours" class="mt-3 space-y-1 text-xs text-cream/70"></div>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col items-start justify-between gap-2 border-t border-cream/15 pt-6 text-xs text-cream/60 sm:flex-row sm:items-center">
+        <p>&copy; 2026 Maison Kitchen. Fictional demonstration brand.</p>
+        <p id="footer-demo-badge">Demo Portfolio by Siteworthy</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer & Backdrop -->
+  <div
+    id="cart-backdrop"
+    class="fixed inset-0 z-50 hidden bg-espresso/50 backdrop-blur-[1px] transition-opacity"
+    aria-hidden="true"
+  ></div>
+
+  <aside
+    id="cart-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cart-drawer-title"
+    aria-hidden="true"
+    class="fixed inset-y-0 right-0 z-50 flex w-full max-w-md translate-x-full flex-col border-l border-espresso/15 bg-cream shadow-xl transition-transform duration-200"
+  >
+    <!-- Drawer Header -->
+    <div class="flex items-center justify-between border-b border-espresso/10 bg-white px-5 py-4">
+      <div>
+        <h2 id="cart-drawer-title" class="font-serif text-xl font-semibold text-espresso">
+          Your Order
+        </h2>
+        <p id="cart-drawer-subtitle" class="text-xs text-espresso/65">
+          0 items selected
+        </p>
+      </div>
+      <button
+        type="button"
+        id="cart-close-btn"
+        aria-label="Close shopping cart"
+        class="inline-flex items-center justify-center rounded-md border border-espresso/15 bg-cream/60 p-2 text-espresso transition-colors hover:bg-cream"
+      >
+        <i data-lucide="x" class="h-5 w-5"></i>
+      </button>
+    </div>
+
+    <!-- Drawer Body -->
+    <div class="flex-1 overflow-y-auto px-5 py-5">
+      <!-- Empty Cart State -->
+      <div
+        id="cart-empty-state"
+        class="flex flex-col items-center justify-center rounded-lg border border-dashed border-espresso/20 bg-white/70 px-6 py-12 text-center"
+      >
+        <i data-lucide="shopping-bag" class="h-10 w-10 text-espresso/35"></i>
+        <p class="mt-4 font-serif text-lg font-medium text-espresso">Your order bag is empty</p>
+        <p class="mt-1.5 text-sm text-espresso/70">
+          Explore our menu and add dishes you would like to order.
+        </p>
+        <a
+          href="#menu"
+          id="cart-browse-btn"
+          class="mt-5 inline-flex items-center rounded-md bg-terracotta px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-terracotta/90"
+        >
+          Browse Menu
+        </a>
+      </div>
+
+      <!-- Cart Items List -->
+      <ul id="cart-items-list" class="hidden space-y-3"></ul>
+
+      <!-- Demo Placeholder Notice (shown if WhatsApp number is still placeholder) -->
+      <div
+        id="cart-demo-notice"
+        class="mt-4 hidden rounded-lg border border-sage/30 bg-white p-4 text-xs text-espresso/85"
+      >
+        <p class="font-semibold text-sage">Demo Mode — WhatsApp Preview</p>
+        <p class="mt-1 text-espresso/75">
+          No live WhatsApp number is configured yet in <code class="font-mono">config.js</code>. Here is the exact message that would be sent:
+        </p>
+        <pre
+          id="cart-demo-message-preview"
+          class="mt-2 max-h-40 overflow-y-auto whitespace-pre-wrap rounded bg-cream p-2.5 font-sans text-[11px] leading-relaxed text-espresso"
+        ></pre>
+      </div>
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="border-t border-espresso/10 bg-white px-5 py-4">
+      <div class="flex items-center justify-between text-base">
+        <span class="font-medium text-espresso/80">Total Subtotal</span>
+        <span id="cart-total-price" class="font-sans text-lg font-semibold text-espresso">Rp0</span>
+      </div>
+      <p class="mt-1 text-[11px] text-espresso/60">
+        You will review and send this order manually via WhatsApp.
+      </p>
+      <button
+        type="button"
+        id="cart-checkout-btn"
+        disabled
+        class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md bg-terracotta px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-terracotta/90 disabled:cursor-not-allowed disabled:bg-espresso/20 disabled:text-espresso/50"
+      >
+        <i data-lucide="message-circle" class="h-4 w-4"></i>
+        <span>Checkout via WhatsApp</span>
+      </button>
+    </div>
+  </aside>
+
+  <div id="toast-container" aria-live="polite" class="fixed bottom-4 right-4 z-50 flex flex-col gap-2"></div>
+
+  <!-- Lucide Icons & Main Script -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>
